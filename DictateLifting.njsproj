@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ProjectGuid>{ddff3359-33a7-48bb-8a4a-9250ef05dfe9}</ProjectGuid>
+        <ProjectHome />
+        <ProjectView>ShowAllFiles</ProjectView>
+        <StartupFile>server.js</StartupFile>
+        <WorkingDirectory>.</WorkingDirectory>
+        <OutputPath>.</OutputPath>
+        <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+        <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+        <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+    <ItemGroup>
+        <Content Include="package.json" />
+        <Compile Include="server.js" />
+        <Compile Include="config\config.js" />
+        <Compile Include="config\express.js" />
+        <Compile Include="config\mongoose.js" />
+        <Compile Include="config\passport.js" />
+        <Compile Include="controllers\index.server.controller.js" />
+        <Compile Include="controllers\users.server.controller.js" />
+        <Compile Include="models\user.server.model.js" />
+        <Compile Include="routes\index.server.routes.js" />
+        <Compile Include="routes\users.server.routes.js" />
+        <Content Include="views\index.ejs" />
+        <Content Include="views\login.ejs" />
+        <Content Include="views\register.ejs" />
+        <Compile Include="config\env\development.js" />
+        <Compile Include="config\strategies\facebook.js" />
+        <Compile Include="config\strategies\local.js" />
+        <Compile Include="config\strategies\twitter.js" />
+        <Content Include="public\css\dictate.css" />
+        <Content Include="public\images\background_3.jpg" />
+        <Content Include="public\images\mainBackground.jpg" />
+        <Compile Include="public\js\index.js" />
+        <Compile Include="public\js\jquery-2.2.4.min.js" />
+        <Content Include="views\partials\footer.ejs" />
+        <Content Include="views\partials\header.ejs" />
+        <Compile Include="__OLD\routes\id.exercises.exerciseName.js" />
+        <Compile Include="__OLD\routes\id.exercises.js" />
+        <Compile Include="__OLD\routes\id.js" />
+        <Compile Include="__OLD\routes\id.profile.js" />
+        <Compile Include="__OLD\routes\id.workouts.date.js" />
+        <Compile Include="__OLD\routes\id.workouts.js" />
+        <Compile Include="__OLD\routes\index.js" />
+        <Compile Include="__OLD\routes\main.js" />
+        <Content Include="__OLD\views\id.ejs" />
+        <Content Include="__OLD\views\id.exercises.ejs" />
+        <Content Include="__OLD\views\id.exercises.exerciseName.ejs" />
+        <Content Include="__OLD\views\id.profile.ejs" />
+        <Content Include="__OLD\views\id.workouts.date.ejs" />
+        <Content Include="__OLD\views\id.workouts.ejs" />
+        <Content Include="__OLD\views\index_ex.ejs" />
+        <Content Include="__OLD\views\login.ejs" />
+        <Content Include="__OLD\views\register.ejs" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="__OLD" />
+        <Folder Include="__OLD\routes" />
+        <Folder Include="__OLD\views" />
+        <Folder Include="config" />
+        <Folder Include="config\env" />
+        <Folder Include="config\strategies" />
+        <Folder Include="controllers" />
+        <Folder Include="dataDB" />
+        <Folder Include="models" />
+        <Folder Include="public" />
+        <Folder Include="public\css" />
+        <Folder Include="public\images" />
+        <Folder Include="public\js" />
+        <Folder Include="routes" />
+        <Folder Include="views" />
+        <Folder Include="views\partials" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
+    <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+    <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+    <ProjectExtensions>
+        <VisualStudio>
+          <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+            <WebProjectProperties>
+              <UseIIS>False</UseIIS>
+              <AutoAssignPort>True</AutoAssignPort>
+              <DevelopmentServerPort>0</DevelopmentServerPort>
+              <DevelopmentServerVPath>/</DevelopmentServerVPath>
+              <IISUrl>http://localhost:48022/</IISUrl>
+              <NTLMAuthentication>False</NTLMAuthentication>
+              <UseCustomServer>True</UseCustomServer>
+              <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+              <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+            </WebProjectProperties>
+          </FlavorProperties>
+          <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+            <WebProjectProperties>
+              <StartPageUrl>
+              </StartPageUrl>
+              <StartAction>CurrentPage</StartAction>
+              <AspNetDebugging>True</AspNetDebugging>
+              <SilverlightDebugging>False</SilverlightDebugging>
+              <NativeDebugging>False</NativeDebugging>
+              <SQLDebugging>False</SQLDebugging>
+              <ExternalProgram>
+              </ExternalProgram>
+              <StartExternalURL>
+              </StartExternalURL>
+              <StartCmdLineArguments>
+              </StartCmdLineArguments>
+              <StartWorkingDirectory>
+              </StartWorkingDirectory>
+              <EnableENC>False</EnableENC>
+              <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+            </WebProjectProperties>
+          </FlavorProperties>
+        </VisualStudio>
+    </ProjectExtensions>
+</Project>

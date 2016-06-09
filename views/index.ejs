@@ -1,0 +1,42 @@
+<%# ---------- %>
+<%# Index View %>
+<%# ---------- %>
+
+<% include partials/header %>
+<div id="view">
+    <div id="header">
+        <h1>Dictate Lifting</h1>
+    </div>
+    <div id="container">
+        <div id="tabs">
+            <% if (!user) { %>
+                <button id="signButton">Sign Up</button>
+                <button id="logButton">Login</button>
+            <% } else { %>
+                <h2>Hello <%=user %>!</h2>
+                <button id="logoutButton" action="/logout">Logout</button>
+            <% } %>
+        </div>        
+        <div id="panel">
+            <div id="login">
+                <form action="/login" method="post">
+                    <input for="username" type="text" name="username" placeholder="username">
+                    <input for="password" type="password" name="password" placeholder="password">
+                    <input type="submit" value="Log In">
+                </form>
+            </div>
+            <div id="signup">
+                <form action="/register" method="post">
+                    <input for="name" type="text" name="name" placeholder="name">
+                    <input for="username" type="text" name="username" placeholder="username">
+                    <input for="password" type="password" name="password" placeholder="password">
+                    <input for="email" type="text" name="email" placeholder="email">
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/index.js"></script>
+<% include partials/footer %>

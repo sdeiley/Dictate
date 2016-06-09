@@ -1,0 +1,105 @@
+body {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+#view {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../images/background_3.jpg);
+    background-size: 100% 100%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+#header {
+    width: 100%;
+    height: 10%;
+    background-color: black;
+}
+
+#header h1 {
+    color: white;
+    margin-top: 1%;
+    margin-left: 5%;
+    padding: 0 0 0 0;
+    float: left;
+}
+
+#container {
+    border-radius: 25px;
+    margin: auto;
+    height: 50%;
+    width: 40%;
+    background-color: rgba(128,128,128,.9);
+    position: relative;
+    top: 10%;
+    box-shadow: 8px 8px 20px black;
+}
+
+#tabs {
+    height: 40px;
+    width: 100%;
+    background-color: black;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+}
+
+.selected {
+    background-color: black;
+}
+
+#logButton {
+    height: 100%;
+    width: 30%;
+    margin-left: 5%;
+    float: right;
+    background-color: rgb(128,128,128);
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+}
+
+#signButton {
+    height: 100%;
+    width: 30%;
+    margin-left: 5%;
+    float: right;
+    background-color: white;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+}
+
+#panel {
+    text-align: center;
+    
+}
+
+#login {
+    text-align: center;
+}
+
+#login input {
+    display: block;
+    width: 70%;
+    height: 30px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#signup {
+    text-align: center;
+    display: none;
+}
+
+#signup input {
+    display: block;
+    width: 70%;
+    height: 30px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}

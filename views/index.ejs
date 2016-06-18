@@ -8,15 +8,17 @@
         <h1>Dictate Lifting</h1>
     </div>
     <div id="container">
-        <div id="tabs">
-            <% if (!user) { %>
+        <% if (!user) { %>
+            <div id="tabs">
                 <button id="signButton">Sign Up</button>
                 <button id="logButton">Login</button>
-            <% } else { %>
-                <h2>Hello <%=user %>!</h2>
+            </div>
+        <% } else { %>
+            <h2>Hello <%=user %>!</h2>
+            <div id="tabs">
                 <button id="logoutButton" action="/logout">Logout</button>
-            <% } %>
-        </div>        
+            </div>
+        <% } %>  
         <div id="panel">
             <div id="login">
                 <form action="/login" method="post">

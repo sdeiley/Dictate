@@ -1,13 +1,13 @@
 {
-  "name": "liftapp",
-  "version": "1.0.0",
-  "description": "Web App for workout tracking.",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "author": {
+    "name": "Daniel Mangum"
   },
-  "author": "Daniel Mangum",
-  "license": "ISC",
+  "contributors": [
+    {
+      "email": "deileyshane@outlook.com",
+      "name": "Shane Deiley"
+    }
+  ],
   "dependencies": {
     "body-parser": "^1.15.1",
     "connect-flash": "^0.1.1",
@@ -16,9 +16,19 @@
     "ejs": "^2.4.2",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
-    "mongodb": "^2.6.12",
     "mongoose": "^4.4.19",
+    "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
+    "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.4"
-  }
+  },
+  "description": "Web App for workout tracking.",
+  "license": "ISC",
+  "main": "server.js",
+  "name": "dictate-lifting",
+  "repository": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
 }

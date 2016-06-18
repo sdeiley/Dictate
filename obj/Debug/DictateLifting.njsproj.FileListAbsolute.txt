@@ -1,0 +1,2 @@
+C:\git\Dictate\obj\Debug\DictateLifting.njsprojResolveAssemblyReference.cache
+C:\git\Dictate\bin\Microsoft.NodejsTools.WebRole.dll

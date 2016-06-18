@@ -14,3 +14,6 @@ to make a weightlifting app that is as hands-off as possible.
 * *Also for women
 * **MongoDB, Express, Node ... and Angular
 * ***Mangum is practically a man
+
+
+Quick test to determine if push/pull is working correctly with IntelliJ

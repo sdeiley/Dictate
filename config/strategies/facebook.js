@@ -7,7 +7,7 @@ var passport = require('passport')
   , path = require('path')
   ,	FacebookStrategy = require('passport-facebook').Strategy
   ,	config = require(path.join(__dirname, '..', '/config'))
-  ,	users = require(path.join(__dirname, '../..', '/controllers/users.server.controller'));
+  ,	users = require(path.join(__dirname, '../..', '/app/controllers/users.express.controller'));
 
 module.exports = function() {
 	passport.use(new FacebookStrategy({

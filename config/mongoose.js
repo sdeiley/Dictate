@@ -9,7 +9,7 @@ var path = require('path')
 module.exports = function() {
 	var db = mongoose.connect(config.db);
 
-	require(path.join(__dirname, '..', '/models/user.server.model'));
+	require(path.join(__dirname, '..', '/app/models/user.express.model'));
 
 	return db;
 };

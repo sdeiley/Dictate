@@ -8,7 +8,9 @@
 
 /* Options:
  * 
- * 1. Development
+ * 1. developmentSVS -- Shane's Visual Studio Development Environment
+ * 2. developmentC9 -- Cloud9 Development Environment
+ * 3. production -- (Incomplete) Production Environment
  */
 var path = require('path');
 module.exports = require(path.join(__dirname, '/env/') + process.env.NODE_ENV + '.js');

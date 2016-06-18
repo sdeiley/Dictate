@@ -8,6 +8,7 @@ module.exports = {
 	port: port,
 	ip: ip,
 	db: 'mongodb://localhost/dictateDB',
+	sessionSecret: "ThereIsNoReasonToBeAliveIfYouCannotDeadlift",
 	facebook: {
 		clientID: '513828288756645', //TODO: Change
 		clientSecret: '2d7cc991efddb864e9af61f307980b9a', //TODO: Change

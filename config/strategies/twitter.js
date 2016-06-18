@@ -3,7 +3,7 @@ var passport = require('passport')
   , path = require('path')
   ,	TwitterStrategy = require('passport-twitter').Strategy
   ,	config = require(path.join(__dirname, '..', '/config'))
-  ,	users = require(path.join(__dirname, '../..', '/controllers/users.server.controller'));
+  ,	users = require(path.join(__dirname, '../..', '/app/controllers/users.express.controller'));
 
 module.exports = function() {
 	passport.use(new TwitterStrategy({

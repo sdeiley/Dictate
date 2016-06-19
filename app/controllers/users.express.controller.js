@@ -2,6 +2,8 @@
 // Users Controller
 // ----------------
 
+'use strict';
+
 var User = require('mongoose').model('User')
   ,	passport = require('passport');
 

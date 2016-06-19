@@ -1,4 +1,6 @@
-$("#logButton").on("click", function(){
+'use strict';
+
+$("#logButton").on("click", function (){
     $("#logButton").css("background-color", "rgb(128,128,128)");
     $("#login").css("display", "inline");
     $("#signup").css("display", "none");

@@ -2,6 +2,8 @@
 // Users Route
 // -----------
 
+'use strict';
+
 var path = require('path')
   , usersController = require(path.join(__dirname,'..', '/controllers/users.express.controller'))
   ,	passport = require('passport');

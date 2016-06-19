@@ -12,11 +12,20 @@
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <StartWebBrowser>True</StartWebBrowser>
+    <LaunchUrl>http://localhost:1337</LaunchUrl>
+    <Environment>NODE_ENV</Environment>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
     <Content Include="package.json" />
+    <Compile Include="app\controllers\exercise.express.controller.js" />
+    <Compile Include="app\controllers\workout.express.controller.js" />
+    <Compile Include="app\models\exercise.express.model.js" />
+    <Compile Include="app\models\workout.express.model.js" />
+    <Compile Include="app\routes\exercise.express.route.js" />
+    <Compile Include="app\routes\workout.express.route.js" />
     <Compile Include="config\env\developmentSVS.js" />
     <Compile Include="config\env\production.js" />
     <Compile Include="public\angular\application.js" />

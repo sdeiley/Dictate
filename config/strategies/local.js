@@ -2,6 +2,8 @@
 // Local Authorization Strategy
 // ----------------------------
 
+'use strict';
+
 var passport = require('passport')
   ,	LocalStrategy = require('passport-local').Strategy
   , User = require('mongoose').model('User');

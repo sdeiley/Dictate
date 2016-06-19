@@ -2,6 +2,9 @@
 // Development  on Cloud9 Environmental Variables
 // ----------------------------------------------
 
+'use strict';
+
+
 var port = 1337;
 var ip = process.env.IP;
 module.exports = {

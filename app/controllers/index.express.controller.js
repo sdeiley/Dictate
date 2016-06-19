@@ -2,6 +2,8 @@
 // Server Controllor
 // -----------------
 
+'use strict';
+
 exports.render = function (req, res) {
 	// Session use example
 	if (req.session.lastLogin) {

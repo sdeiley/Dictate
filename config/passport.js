@@ -2,6 +2,8 @@
 // Passport Configuration
 // ----------------------
 
+'use strict';
+
 var passport = require('passport')
   , path = require('path')
   , mongoose = require('mongoose');

@@ -1,6 +1,9 @@
 // --------------------------------------
 // Configuration Dependencies for Express
 // --------------------------------------
+
+'use strict';
+
 var bodyParser = require('body-parser')
   , compression = require('compression')
   , express = require('express')

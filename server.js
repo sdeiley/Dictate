@@ -2,6 +2,8 @@
 // Server
 // ------
 
+'use strict';
+
 // Variables
 process.env.NODE_ENV = process.env.NODE_ENV || 'developmentSVS';
 var path = require('path');

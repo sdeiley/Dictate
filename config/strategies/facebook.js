@@ -2,6 +2,8 @@
 // Facebook Authentication Strategy
 // --------------------------------
 
+'use strict';
+
 var passport = require('passport')
   , url = require('url')
   , path = require('path')

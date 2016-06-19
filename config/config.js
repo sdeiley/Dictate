@@ -2,6 +2,9 @@
 // Config
 // ------
 
+'use strict';
+
+
 /* Takes the command-line created directive NODE_ENV and uses that javascript file
  * for configuration variables (port, db, authentification tokens/links)
  */

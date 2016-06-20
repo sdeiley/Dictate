@@ -25,13 +25,3 @@ app.listen(config.port, config.ip, function() {
 });
 
 module.exports = app;
-
-
-
-/* OLD
-// --------------
-// Requrie routes
-// --------------
-require(path.join(__dirname, 'routes/main'))(app); // main/login
-require(path.join(__dirname, 'routes/'))(app); // all other routes
-*/

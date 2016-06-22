@@ -7,12 +7,13 @@
 var User = require('mongoose').model('User')
   ,	passport = require('passport');
 
+  // Utility error function
 var getErrorMessage = function(err) {
 	var message = '';
 	if (err.code) {
 		switch (err.code) {
-			case 11000:
-			case 11001:
+			case 11000: //MongoDB error code insert, value exists
+			case 11001: //MongoDB error code update, value exists
 				message = 'Username already exists';
 				break;
 			default:
@@ -29,29 +30,31 @@ var getErrorMessage = function(err) {
 	return message;
 };
 
-//exports.renderLogin = function(req, res, next) {
-//	if (!req.user) {
-//		res.render('login', {
-//			title: 'Log-in Form',
-//			messages: req.flash('error') || req.flash('info')
-//		});
-//	}
-//	else {
-//		return res.redirect('/');
-//	}
-//};
+// Render HTTP Get request for login page
+exports.renderLogin = function(req, res, next) {
+	if (!req.user) {
+		res.render('login', {
+			title: 'Log-in Form',
+			messages: req.flash('error') || req.flash('info')
+		});
+	}
+	else {
+		return res.redirect('/');
+	}
+};
 
-//exports.renderRegister = function(req, res, next) {
-//	if (!req.user) {
-//		res.render('register', {
-//			title: 'Register Form',
-//			messages: req.flash('error')
-//		});
-//	}
-//	else {
-//		return res.redirect('/');
-//	}
-//};
+// Render HTTP Get request for register page
+exports.renderRegister = function(req, res, next) {
+	if (!req.user) {
+		res.render('register', {
+			title: 'Register Form',
+			messages: req.flash('error')
+		});
+	}
+	else {
+		return res.redirect('/');
+	}
+};
 
 exports.register = function(req, res, next) {
 	if (!req.user) {
@@ -64,7 +67,12 @@ exports.register = function(req, res, next) {
 				req.flash('error', message);
 				return res.redirect('/register');
 			}	
-
+			
+			// For now, just redirect home, then login
+			// TODO: Flash success???
+			return res.redirect('/');
+			
+			/*
 			// Login provided by passport module
 			req.login(user, function(err) {
 				if (err) 
@@ -72,6 +80,7 @@ exports.register = function(req, res, next) {
 				
 				return res.redirect('/');
 			});
+			*/
 		});
 	}
 	else {
@@ -79,6 +88,7 @@ exports.register = function(req, res, next) {
 	}
 };
 
+// TODO: Is this complete?
 exports.login = function(req, res, next) {
 	passport.authenticate('local', {
 			successRedirect: '/',
@@ -92,6 +102,7 @@ exports.logout = function(req, res) {
 	res.redirect('/');
 };
 
+/*
 exports.saveOAuthUserProfile = function(req, profile, done) {
 	User.findOne({
 			provider: profile.provider,
@@ -126,8 +137,7 @@ exports.saveOAuthUserProfile = function(req, profile, done) {
 		}
 	);
 };
-
-
+*/
 
 exports.create = function(req, res, next) {	
 	var user = new User(req.body);
@@ -141,6 +151,7 @@ exports.create = function(req, res, next) {
 	});
 };
 
+// Returns list of all users
 exports.list = function(req, res, next) {
 	User.find({}, function(err, users) {
 		if (err) {
@@ -156,6 +167,7 @@ exports.read = function(req, res) {
 	res.json(req.user);
 };
 
+// Parameter function to retrieve user with unique id
 exports.userByID = function(req, res, next, id) {
 	User.findOne({
 			_id: id

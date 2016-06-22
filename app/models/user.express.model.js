@@ -10,33 +10,35 @@ var mongoose = require('mongoose')
 
 // Note: Important to equate schema with 'name' fields in view (.ejs files)
 var UserSchema = new Schema({
-	name: String,
+	firstName: {
+		type: String,
+		trim: true
+	},
 	email: {
 		type: String,
+		trim: true,
 		unique: true
 	},
 	username: {
 		type: String,
 		trim: true,
-		unique: true // unique is mongodb index
+		unique: true
 	},
 	password: String,
 	provider: String, // strategy used to register user
-	providerId: String, // identifier for auth strategy
-	providerData: {} // used to store object returned from OAuth providers
+	//providerId: String, // identifier for auth strategy
+	//providerData: {} // used to store object returned from OAuth providers
 });
 
 // 'pre' middleware runs first, hashes passwords for storage
-UserSchema.pre('save', 
-	function(next) {
-		if (this.password) {
-			var md5 = crypto.createHash('md5');
-			this.password = md5.update(this.password).digest('hex');
-		}
-
-		next();
+UserSchema.pre('save', function (next) {
+	if (this.password) {
+		var md5 = crypto.createHash('md5');
+		this.password = md5.update(this.password).digest('hex');
 	}
-);
+
+	next();
+});
 
 // Accepts text password and tests against db hashed password
 UserSchema.methods.authenticate = function(password) {
@@ -46,6 +48,7 @@ UserSchema.methods.authenticate = function(password) {
 	return this.password === md5;
 };
 
+// Static function to enable mongoose functionality beyond base functions
 UserSchema.statics.findUniqueUsername = function(username, suffix, callback) {
 	var _this = this;
 	var possibleUsername = username + (suffix || '');

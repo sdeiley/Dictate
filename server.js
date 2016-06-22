@@ -5,7 +5,7 @@
 'use strict';
 
 // Variables
-process.env.NODE_ENV = process.env.NODE_ENV || 'developmentSVS';
+process.env.NODE_ENV = process.env.NODE_ENV || 'developmentGDM';
 var path = require('path');
 
 // Get Configurations
@@ -13,6 +13,9 @@ var config = require(path.join(__dirname, '/config/config')) // Must be loaded f
   , mongoose = require(path.join(__dirname, '/config/mongoose')) // Connect error if not loaded before app
   , express = require(path.join(__dirname,'/config/express'))
   , passport = require(path.join(__dirname,'/config/passport')); // Mongoose (i.e. model) needs loaded first
+
+// Add static path
+app.use(express.static(__dirname + '/public'));
 
 // Start Application parameters
 var db = mongoose()

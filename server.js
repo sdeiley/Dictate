@@ -14,17 +14,19 @@ var config = require(path.join(__dirname, '/config/config')) // Must be loaded f
   , express = require(path.join(__dirname,'/config/express'))
   , passport = require(path.join(__dirname,'/config/passport')); // Mongoose (i.e. model) needs loaded first
 
-// Add static path
-app.use(express.static(__dirname + '/public'));
-
 // Start Application parameters
 var db = mongoose()
   , app = express()
   , pass = passport();
 
+// Add static path
+app.use(express.static(__dirname + '/public'));
+
 // Start App
 app.listen(config.port, config.ip, function() {
     console.log(process.env.NODE_ENV + ' server running at port ' + config.port);
 });
+
+
 
 module.exports = app;

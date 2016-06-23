@@ -19,8 +19,6 @@ var db = mongoose()
   , app = express()
   , pass = passport();
 
-// Add static path
-app.use(express.static(__dirname + '/public'));
 
 // Start App
 app.listen(config.port, config.ip, function() {
